@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>overflow:hidden 演示</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 100px; /* 固定高度，文字会超出 */
+      border: 1px solid #000;
+      /* 先注释掉，看默认效果；再打开看 hidden 效果 */
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    这是一段超长的文字这是一段超长的文字这是一段超长的文字这是一段超长的文字这是一段超长的文字这是一段超长的文字这是一段超长的文字
+  </div>
+</body>
+</html>

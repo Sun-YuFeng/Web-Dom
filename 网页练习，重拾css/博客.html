@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 响应式基础：视口设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS复习示例页面</title>
+    <style>
+        /* 全局样式重置：消除默认边距和内边距，统一盒模型 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 变量定义：CSS3变量，方便统一管理样式值 */
+        :root {
+            --primary-color: #2c3e50;    /* 主色调 */
+            --secondary-color: #3498db;  /* 辅助色 */
+            --accent-color: #e74c3c;     /* 强调色 */
+            --light-color: #ecf0f1;      /* 浅色背景 */
+            --text-color: #333;          /* 文本颜色 */
+            --shadow: 0 2px 8px rgba(0,0,0,0.1); /* 阴影样式 */
+        }
+
+        /* 页面主体样式 */
+        body {
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* 头部导航栏：Flex布局 + 固定定位 */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 5%;
+            position: sticky; /* 粘性定位：滚动时固定在顶部 */
+            top: 0;
+            box-shadow: var(--shadow);
+            z-index: 100; /* 层级：确保导航栏在最上层 */
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex; /* Flex布局：实现水平排列 */
+            justify-content: space-between; /* 两端对齐 */
+            align-items: center; /* 垂直居中 */
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* 导航菜单 */
+        .nav-menu {
+            display: flex;
+            list-style: none; /* 去除列表默认样式 */
+            gap: 2rem; /* 项目间距 */
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none; /* 去除下划线 */
+            transition: color 0.3s; /* 过渡动画：颜色变化 */
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-color); /* 鼠标悬停变色 */
+        }
+
+        /* 主内容区：网格布局 + 响应式 */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 5%;
+            display: grid; /* Grid布局：灵活分栏 */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* 卡片组件：圆角 + 阴影 + 过渡 */
+        .card {
+            background-color: white;
+            border-radius: 8px; /* 圆角 */
+            box-shadow: var(--shadow);
+            overflow: hidden; /* 裁剪溢出内容 */
+            transition: transform 0.3s, box-shadow 0.3s; /* 多属性过渡 */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* 鼠标悬停上移 */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* 加深阴影 */
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* 图片自适应：保持比例 */
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .card-desc {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* 按钮样式：伪类 + 渐变 */
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(to right, var(--secondary-color), #2980b9); /* 渐变背景 */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #2980b9, var(--secondary-color));
+        }
+
+        /* 侧边信息栏：浮动 + 定位 */
+        .info-bar {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-color); /* 左侧边框强调 */
+            margin: 2rem 5%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 动画效果：关键帧动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease forwards; /* 应用动画 */
+            opacity: 0; /* 初始透明 */
+        }
+
+        /* 延迟动画：逐个显示卡片 */
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.3s; }
+        .card:nth-child(3) { animation-delay: 0.5s; }
+
+        /* 响应式调整：小屏幕适配 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem; /* 缩小菜单间距 */
+            }
+            .logo {
+                font-size: 1.2rem; /* 缩小logo字体 */
+            }
+            .card-img {
+                height: 180px; /* 缩小卡片图片 */
+            }
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">CSS复习站</div>
+            <ul class="nav-menu">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">知识点</a></li>
+                <li><a href="#">练习</a></li>
+                <li><a href="#">关于</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main>
+        <!-- 卡片1：布局知识点 -->
+        <div class="card animate">
+            <img src="https://picsum.photos/seed/css1/600/400" alt="布局示例" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">Flex/Grid布局</h3>
+                <p class="card-desc">Flex用于一维布局（行/列），Grid用于二维布局（多行多列），是CSS布局的核心，替代传统的浮动布局。</p>
+                <a href="#" class="btn">查看详情</a>
+            </div>
+        </div>
+
+        <!-- 卡片2：样式知识点 -->
+        <div class="card animate">
+            <img src="https://picsum.photos/seed/css2/600/400" alt="样式示例" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">样式与变量</h3>
+                <p class="card-desc">CSS变量（--变量名）可以统一管理样式值，减少重复代码；渐变、阴影、圆角让样式更丰富。</p>
+                <a href="#" class="btn">查看详情</a>
+            </div>
+        </div>
+
+        <!-- 卡片3：响应式知识点 -->
+        <div class="card animate">
+            <img src="https://picsum.photos/seed/css3/600/400" alt="响应式示例" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">响应式设计</h3>
+                <p class="card-desc">通过媒体查询（@media）适配不同屏幕尺寸，结合视口设置，实现移动端和PC端的兼容。</p>
+                <a href="#" class="btn">查看详情</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 信息栏 -->
+    <div class="info-bar">
+        <h3>CSS核心复习要点</h3>
+        <p>1. 盒模型（box-sizing）：控制元素的宽高计算方式；2. 定位（position）：static/relative/absolute/fixed/sticky；3. 动画（transition/@keyframes）：实现交互动效；4. 响应式：媒体查询 + 弹性布局。</p>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>CSS复习示例 &copy; 2026 | 掌握核心知识点，多动手练习！</p>
+    </footer>
+</body>
+</html>

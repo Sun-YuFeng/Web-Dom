@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 重置默认样式，方便对比 */
+        * {
+            margin: 10px;
+        }
+
+        /* 默认值：content-box */
+        .box-content {
+            box-sizing: content-box;
+            /* 默认，可省略 */
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            border: 2px solid red;
+            background: pink;
+        }
+
+        /* 重点：border-box */
+        .box-border {
+            box-sizing: border-box;
+            /* 关键属性 */
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            border: 2px solid blue;
+            background: lightblue;
+        }
+
+        /* 二、border-box 的作用
+        当设置 box-sizing: border-box; 时，元素的尺寸计算规则会反转：
+        width = 内容宽度 + padding + border（即你设置的 width 是「总宽度」）
+        height = 内容高度 + padding + border（即你设置的 height 是「总高度」） */
+
+        /* 这种方式在实际开发中更为常用，因为它使得元素的尺寸更容易预测和控制，上面的计算是224px，下面的是200px */
+    </style>
+</head>
+
+<body>
+    <div class="box-content">content-box（默认）</div>
+    <div class="box-border">border-box</div>
+</body>
+
+</html>
