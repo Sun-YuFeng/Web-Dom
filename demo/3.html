@@ -1,0 +1,44 @@
+<!-- 创建一个父 <div>（类名 container），宽度 800px、高度 300px、边框 1px solid #eee、margin 0 auto；
+父容器开启 Flex 布局，内部子元素水平垂直居中；
+父容器内放 3 个子 <div>（类名 item），每个 item：宽度 100px、高度 100px、背景色分别为 #e53e3e、#38a169、#3182ce；
+子元素之间的间距设为 20px。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            width: 800px;
+            height: 300px;
+            border: 1px solid #eee;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            gap: 20px
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+        }
+        .container .item:nth-child(1){
+            background-color: #e53e3e;
+        }
+        .container .item:nth-child(2){
+            background-color: #38a169;
+        }
+        .container .item:nth-child(3){
+            background-color: #3182ce;
+        }
+    </style>
+</head>
+<body>
+    <div class = 'container'>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

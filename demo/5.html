@@ -1,0 +1,85 @@
+<!-- 当屏幕宽度 ≤ 768px（手机端）时：
+父容器宽度改为 90%，高度自适应；
+Flex 布局改为垂直排列（flex-direction: column）；
+子元素之间的间距改为 15px，每个 item 宽度改为 80%、margin 0 auto；
+背景色稍微调浅（比如 #fef2f2、#e6fffa、#e0f2fe）。 -->
+<!-- ======================================= -->
+ <!-- @media 里 .item 样式后多了个无效字符 S，导致样式解析错误；
+父容器 height: 300px 在移动端未改为自适应（按要求应 height: auto）；
+移动端子元素 margin: 0 auto 可简化，且 Flex 布局下居中可复用父容器属性。 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            width: 800px;
+            height: 300px;
+            border: 1px solid #eee;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            gap: 20px
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+        }
+
+        .container .item:nth-child(1) {
+            background-color: #e53e3e;
+        }
+
+        .container .item:nth-child(2) {
+            background-color: #38a169;
+        }
+
+        .container .item:nth-child(3) {
+            background-color: #3182ce;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                height: auto;
+                flex-direction: column;
+                gap: 15px;
+                 /* 保留垂直居中，子元素高度固定时更美观 */
+                padding: 20px 0;
+            }
+
+            .item {
+                width: 80%;
+                margin: 0 auto;
+                /* 保持子元素高度，或按需改为auto */
+                height: 100px;
+            }
+            .container .item:nth-child(1) {
+                background-color: #fef2f2;
+            }
+
+            .container .item:nth-child(2) {
+                background-color: #e6fffa;
+            }
+
+            .container .item:nth-child(3) {
+                background-color: #e0f2fe;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!-- 复用练习 1 的 <p> 标签（新增类名 decorate）；
+给 .decorate 左侧加一条 3px 宽、颜色 #4299e1 的竖线，竖线高度和文字行高一致；
+用 ::after 伪元素给 <p> 末尾加一个小图标（可以用文字替代，比如 “✨”），颜色 #f6ad55。 -->
+
+<!-- ==========================批改================================ -->
+ 核心问题：
+<!-- .decorate::before 伪元素缺少 content（伪元素必须的属性），且定位 / 尺寸设置不完整，导致左侧竖线无法显示；
+竖线高度未和文字行高对齐，位置偏移未修正；
+首行缩进和左侧竖线叠加，视觉上会挤压文字（需调整 text-indent 或给 p 加左内边距）。 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>练习4</title>
+    <style>
+        /* 在这里写你的CSS */
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            color: #333;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            text-indent: 2em;
+        }
+
+        a {
+            color: #4299e1;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #38b2ac;
+            text-decoration: underline;
+        }
+        .decorate{
+            /* 给左侧竖线预留空间，避免挤压文字 */
+            padding-left: 10px;
+            /* 让伪元素和文字对齐 */
+            position: relative;
+        }
+
+        .decorate::before {
+            /* 伪元素必须有content，空内容即可 */
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            /* 和p的line-height一致，匹配文字高度 */
+            height: 1.6em;
+            background-color: #4299e1;
+        }
+
+        .decorate::after {
+            content: '⭐';
+            /* 微调图标和文字的间距 */
+            margin-left: 5px;
+            color: #f6ad55
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h1>我的第一个CSS练习</h1>
+    <p class='decorate'>CSS是网页的“化妆师”，能让页面变得更美观。学好基础选择器和样式，是掌握CSS的第一步。</p>
+    <a href="#">点击我看看效果</a>
+</body>
+
+</html>

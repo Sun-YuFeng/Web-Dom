@@ -1,0 +1,39 @@
+<!-- 创建一个 HTML 文件，包含 <h1>、<p>、<a> 三个标签；
+给 <h1> 设置：字体大小 28px、居中对齐、颜色 #333、去掉默认加粗；
+给 <p> 设置：字体大小 16px、行高 1.6、颜色 #666、首行缩进 2em；
+给 <a> 设置：颜色 #4299e1、去掉下划线；鼠标悬停时变成 #38b2ac，加下划线。 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>练习1</title>
+  <style>
+    /* 在这里写你的CSS */
+    h1 {
+      font-size: 28px;
+      text-align: center;
+      color: #333;
+      font-weight: normal;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+      text-indent: 2em;
+    }
+    a {
+      color: #4299e1;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #38b2ac;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>我的第一个CSS练习</h1>
+  <p>CSS是网页的“化妆师”，能让页面变得更美观。学好基础选择器和样式，是掌握CSS的第一步。</p>
+  <a href="#">点击我看看效果</a>
+</body>
+</html>
