@@ -1,0 +1,51 @@
+<!-- 创建一个宽度 90%（最大宽度 1200px）的父容器，水平居中
+父容器内包含两个子盒子：
+左侧盒子：宽度 200px，高度 300px，背景色 #f5f5f5
+右侧盒子：宽度自适应（占满剩余空间），高度 300px，背景色 #e9e9e9
+两个盒子之间留 20px 的间距
+注意清除浮动，避免父容器高度塌陷 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            width: 90%;
+            height: 90vh;
+            border: 1px solid;
+            justify-content: center;
+        }
+        .left{
+            width: 200px;
+            height: 300px;
+            margin-right: 20px;
+            background-color: #f5f5f5;
+        }
+        .right{
+            flex: 1;
+            height: 300px;
+            background-color: #e9e9e9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

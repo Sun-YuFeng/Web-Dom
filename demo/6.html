@@ -1,0 +1,42 @@
+<!-- 需求：
+创建一个固定宽度（400px）、固定高度（200px）的白色盒子
+盒子在浏览器视口中水平 + 垂直都居中
+盒子内添加一行文字（比如 “我是居中的盒子”），文字在盒子内部也水平 + 垂直居中
+给盒子加 1px 的灰色边框，圆角 8px -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid grey;
+            border-radius: 8px;
+        }
+        span{
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>我是居中的盒子</span>
+    </div>
+</body>
+</html>

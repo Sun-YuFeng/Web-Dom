@@ -1,0 +1,62 @@
+<!-- 需求：
+创建一个宽度 90%（最大宽度 1200px）的父容器，水平居中
+容器内展示 6 张 “卡片”，要求：
+每张卡片宽度 280px，高度 200px，背景色 #fff，边框 1px #eee，圆角 8px，阴影（轻微）
+卡片自动换行，每行尽可能多放，且卡片之间的水平 / 垂直间距都是 20px
+卡片内添加一行文字（比如 “卡片 1”），文字居中
+页面整体有轻微的背景色（#f8f8f8） -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            background-color: #f8f8f8;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            width: 280px;
+            height: 200px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgb(211, 211, 211);
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div class="cards">
+            <div class="card">卡片1</div>
+            <div class="card">卡片1</div>
+            <div class="card">卡片1</div>
+            <div class="card">卡片1</div>
+            <div class="card">卡片1</div>
+            <div class="card">卡片1</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

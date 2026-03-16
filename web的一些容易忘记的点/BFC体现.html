@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>BFC 直观演示</title>
+  <style>
+    /* 通用样式，方便看效果 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .demo {
+      margin: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .box {
+      background: #f0f0f0;
+      border: 1px solid #666;
+    }
+
+    /* ========== 场景1：解决浮动父元素高度塌陷 ========== */
+    /* 不触发 BFC：父元素高度塌陷（看不到背景） */
+    .collapse-parent {
+      background: #ffcccc;
+    }
+    .float-child {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: #ff6666;
+    }
+    /* 触发 BFC：父元素包住浮动子元素（能看到背景） */
+    .bfc-parent {
+      background: #ccffcc;
+      overflow: hidden; /* 核心：触发 BFC */
+    }
+
+    /* ========== 场景2：解决 margin 上下重叠 ========== */
+    .margin-box {
+      margin: 20px 0;
+      height: 50px;
+      background: #66ccff;
+    }
+    /* 触发 BFC 的容器：包裹其中一个盒子，避免 margin 重叠 */
+    .bfc-container {
+      overflow: hidden; /* 核心：触发 BFC */
+    }
+
+    /* ========== 场景3：阻止文字环绕浮动元素（两栏布局） ========== */
+    .float-left {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: #ffcc66;
+    }
+    /* 不触发 BFC：文字环绕浮动元素 */
+    .text-wrap {
+      background: #f0f0f0;
+    }
+    /* 触发 BFC：右侧自适应，不环绕 */
+    .text-no-wrap {
+      background: #e0e0e0;
+      overflow: hidden; /* 核心：触发 BFC */
+    }
+  </style>
+</head>
+<body>
+  <!-- 场景1：解决浮动父元素高度塌陷 -->
+  <div class="demo">
+    <h3>场景1：解决浮动父元素高度塌陷</h3>
+    <div>不触发 BFC（父元素高度塌陷）：</div>
+    <div class="collapse-parent">
+      <div class="float-child">浮动子元素</div>
+    </div>
+    <br>
+    <div>触发 BFC（父元素包住浮动元素）：</div>
+    <div class="bfc-parent">
+      <div class="float-child">浮动子元素</div>
+    </div>
+  </div>
+
+  <!-- 场景2：解决 margin 上下重叠 -->
+  <div class="demo">
+    <h3>场景2：解决 margin 上下重叠</h3>
+    <div>不触发 BFC（两个盒子 margin 重叠，间距只有20px）：</div>
+    <div class="margin-box">盒子1</div>
+    <div class="margin-box">盒子2</div>
+    <br>
+    <div>触发 BFC（第二个盒子包在 BFC 容器里，间距40px）：</div>
+    <div class="margin-box">盒子1</div>
+    <div class="bfc-container">
+      <div class="margin-box">盒子2（包在BFC容器里）</div>
+    </div>
+  </div>
+
+  <!-- 场景3：阻止文字环绕浮动元素 -->
+  <div class="demo">
+    <h3>场景3：阻止文字环绕浮动元素（两栏布局）</h3>
+    <div>不触发 BFC（文字环绕浮动元素）：</div>
+    <div class="float-left">左浮动盒子</div>
+    <div class="text-wrap">
+      我是文字内容我是文字内容我是文字内容我是文字内容我是文字内容我是文字内容我是文字内容我是文字内容
+    </div>
+    <br style="clear: both;"> <!-- 清除浮动，避免影响下面 -->
+    <div>触发 BFC（右侧自适应，不环绕）：</div>
+    <div class="float-left">左浮动盒子</div>
+    <div class="text-no-wrap">
+      我是文字内容我是文字内容我是文字内容我是文字内容我是文字内容我是文字内容我是文字内容我是文字内容
+    </div>
+  </div>
+</body>
+</html>

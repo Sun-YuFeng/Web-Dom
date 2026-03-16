@@ -1,0 +1,59 @@
+<!-- 需求：
+创建一个全屏宽度的导航栏（navbar），高度 60px，背景色 #333
+导航栏左侧放一个 logo 文字（比如 “MY LOGO”），白色，左间距 20px
+导航栏右侧放 4 个导航链接（首页 / 产品 / 关于 / 联系），白色，每个链接间距 20px，右间距 20px
+导航栏内所有元素垂直居中
+鼠标悬浮在导航链接上时，文字颜色变为 #409eff（浅蓝色） -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar{
+            width: 100vw;
+            height: 60px;
+            background-color: #333;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;            
+            padding: 0 20px;
+        }
+        .logo{
+            align-items: center;
+            color: white;
+            font-size: large;
+            font-weight: bold;
+        }
+        .right{
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        a{
+            color: white;
+        }
+        a:hover{
+            color: #409eff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">MY LOGO</div>
+        <div class="right">
+            <a href="">首页</a>
+            <a href="">产品</a>
+            <a href="">关于</a>
+            <a href="">联系</a>
+        </div>
+    </div>
+</body>
+</html>
