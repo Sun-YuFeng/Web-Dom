@@ -1,0 +1,53 @@
+<!-- 需求：
+页面主体为两列布局，左侧固定宽度 200px，右侧自适应剩余宽度；
+左侧背景色 #f5f5f5，右侧背景色 #fff；
+两列之间有 10px 的间距；
+要求布局无横向滚动条，且兼容 IE11+（推荐 Flex 实现）。 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .left {
+            box-sizing: border-box;
+            flex: 0 0 200px;
+            height: 100%;
+            background-color: #f5f5f5;
+            border: 1px solid black;
+            margin-right: 10px;
+        }
+
+        .right {
+            flex: 1;
+            height: 100%;
+            background: #fff;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+</body>
+
+</html>

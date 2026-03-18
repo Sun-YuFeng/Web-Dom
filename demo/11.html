@@ -1,0 +1,45 @@
+<!-- 需求：
+页面中有一个宽 300px、高 200px 的白色卡片，卡片有 1px 灰色边框、8px 圆角、轻微阴影；
+卡片在浏览器视口中水平 + 垂直完全居中（要求兼容主流方案，如 Flex）；
+卡片内部有一行文字 “水平垂直居中”，文字在卡片内也水平垂直居中，字体大小 16px，颜色 #333。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            box-sizing: border-box;
+            width: 300px;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgb(238, 238, 238);
+            display: flex;
+        }
+        .text{
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class ='text'>水平垂直居中</span>
+    </div>
+</body>
+</html>
