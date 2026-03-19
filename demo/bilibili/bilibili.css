@@ -1,0 +1,572 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    width: 100%;
+    height: 150px;
+    background-image: url(./简单图片//bc1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    height: 50px;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.head1 {
+    display: flex;
+    flex-shrink: 0;
+    gap: 15px;
+}
+
+.head1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.fa-bilibili {
+    margin-right: 5px;
+}
+
+.fa-arrow-right-to-bracket {
+    margin-right: 5px;
+    transform: rotate(90deg);
+}
+
+.head2 {
+    position: relative;
+    flex: 1;
+    margin: 0 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+#search {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    opacity: 0.7;
+    border: none;
+    outline: none;
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    right: 10px;
+    top: 45%;
+    font-size: 18px;
+}
+
+.head3 {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 25px;
+    padding-top: 10px;
+}
+
+.head3 a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.photo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons i {
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.buttons1,
+.buttons2,
+.buttons3,
+.buttons4,
+.buttons5,
+.buttons6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contribute {
+    width: 90px;
+    height: 35px;
+    background-color: #fb7299;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+.logo {
+    width: 145px;
+    height: 70px;
+    padding-left: 80px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==================================这里开始是tag区======================================= */
+.tag {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    padding-top: 10px;
+    align-items: center;
+}
+
+.play {
+    margin-left: 50px;
+    display: flex;
+    flex-shrink: 0;
+    gap: 15px;
+}
+
+.play1,
+.play2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    width: 50px;
+    gap: 4px;
+}
+
+.play1 img,
+.play2 img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    /* 只给图片加圆角 */
+    border-radius: 50%;
+}
+
+.play1 span,
+.play2 span {
+    color: #18191c;
+    white-space: nowrap;
+    /* 强制文字不换行 */
+}
+
+.classify {
+    height: 70px;
+    flex: 1;
+    align-items: center;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(11, 1fr);
+    gap: 8px;
+    padding: 0 20px;
+    border-right: 1px solid rgb(226, 226, 226);
+}
+
+.classify a {
+    height: 28px;
+    color: rgb(91, 91, 91);
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: rgba(246, 247, 248, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid rgb(241, 242, 243);
+}
+
+#more {
+    background-color: rgba(246, 247, 248, 0.8);
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    color: rgb(91, 91, 91);
+    font-size: 14px;
+    text-align: center;
+}
+
+.hotTag {
+    margin-right: 50px;
+    height: 70px;
+    flex-shrink: 0;
+    align-items: center;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 0px;
+    column-gap: 10px;
+    padding: 0 20px;
+}
+
+.hotTag a {
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.hotTag i {
+    font-size: 12px;
+    padding-right: 5px;
+}
+
+.hotTag1,
+.hotTag2,
+.hotTag3,
+.hotTag4,
+.hotTag5,
+.hotTag6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================recommend区域======================================== */
+.recommend {
+    width: 100%;
+    height: 460px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 600px repeat(3, 1fr) 50px;
+    gap: 20px;
+}
+
+/* 修改类名为 slideshow，确保与 HTML 一致 */
+.slideshow {
+    margin-left: 50px;
+    height: 400px;
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 6px;
+    /* 移除可能存在的默认间距 */
+    background-color: transparent;
+}
+
+/* 确保图片包裹层占据上方所有空间 */
+.slider-wrapper {
+    flex: 1;
+    /* 关键：这会让它吃掉除了 footer 以外的所有高度 */
+    height: 0;
+    /* 配合 flex: 1 使用，防止图片撑开容器 */
+}
+
+.slider-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* 消除图片下方的 3px 缝隙 */
+}
+
+/* 调整底栏，建议不要写死 padding-top */
+.slider-footer {
+    height: 80px;
+    padding: 10px 15px;
+    /* 适当缩小间距 */
+    box-sizing: border-box;
+    /* 确保高度包含 padding */
+    position: relative;
+    /* 移除不需要的外边距 */
+    margin-top: 0;
+}
+
+.slider-footer .toggle {
+    position: absolute;
+    right: 0;
+    top: 25px;
+    display: flex;
+}
+
+.slider-footer .toggle button {
+    margin-right: 12px;
+    width: 28px;
+    height: 28px;
+    appearance: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.slider-footer .toggle button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.slider-footer p {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.slider-indicator {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.slider-indicator li {
+    width: 8px;
+    height: 8px;
+    margin: 4px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.slider-indicator li.active {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+}
+
+.rc1 {
+    grid-row: 1;
+    grid-column: 2;
+    border-radius: 4px;
+}
+
+.rc1_bg {
+    width: 100%;
+    height: 150px;
+    background-image: url(./素材/s1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.rc2 {
+    grid-row: 1;
+    grid-column: 3;
+    border-radius: 4px;
+}
+
+.rc2_bg {
+    width: 100%;
+    height: 150px;
+    background-image: url(./素材/s2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+
+.rc3 {
+    grid-row: 1;
+    grid-column: 4;
+    border-radius: 4px;
+}
+
+.rc3_bg {
+    width: 100%;
+    height: 150px;
+    background-image: url(./素材/s3.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+
+.rc4 {
+    grid-row: 2;
+    grid-column: 2;
+    border-radius: 4px;
+}
+
+.rc4_bg {
+    width: 100%;
+    height: 150px;
+    background-image: url(./素材/s4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.rc5 {
+    grid-row: 2;
+    grid-column: 3;
+    border-radius: 4px;
+}
+
+.rc5_bg {
+    width: 100%;
+    height: 150px;
+    background-image: url(./素材/s5.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.rc6 {
+    grid-row: 2;
+    grid-column: 4;
+    border-radius: 4px;
+}
+
+.rc6_bg {
+    width: 100%;
+    height: 150px;
+    background-image: url(./素材/s6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.rc1_bg,
+.rc2_bg,
+.rc3_bg,
+.rc4_bg,
+.rc5_bg,
+.rc6_bg {
+    position: relative;
+    /* 必须加这一行 */
+    width: 100%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.video_info {
+    width: 100%;
+    height: 37px;
+    border-radius: 4px;
+    /* 修正属性名为 background 或 background-image */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* 建议加上 position 以确保在背景图上方显示 */
+    position: absolute;
+    bottom: 0;
+}
+
+.care {
+    margin-left: 10px;
+    display: flex;
+    color: white;
+    font-size: 14px;
+    margin-right: 5px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 24px;
+}
+
+.times {
+    color: white;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.introduce {
+    margin-top: 10px;
+    display: flex;             /* 恢复 flex 布局 */
+    justify-content: space-between; /* 左右两端对齐 */
+    align-items: flex-start;   /* 顶部对齐 */
+    gap: 8px;                  /* 标题和图标之间的间距 */
+    height: 44px;              /* 稍微加高一点，给两行标题留足空间 */
+}
+
+.title {
+    flex: 1;                   /* 标题占据剩余所有空间 */
+    font-size: 15px;
+    line-height: 22px;
+    height: 44px;              /* 高度是行高的两倍 */
+    color: #18191c;
+    margin: 0;
+    
+    /* 核心：把多行省略加在 title 本身，而不是父级 introduce */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-right: 0; 
+    overflow: hidden;
+}
+
+.op {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #9499b5;            /* 默认灰色，不那么突兀 */
+    cursor: pointer;
+    flex-shrink: 0;            /* 防止图标被挤压 */
+}
+.title:hover {
+    color: #00c0f3;
+}
+
+.op:hover {
+    background-color: gray;
+}
+
+.up {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;       
+    font-size: 13px;
+    color: #9499b5;
+}
+
+.up i {
+    margin-right: 4px;         
+    font-size: 14px;
+}
+
+.up p {
+    margin: 0;                 
+}
+.change{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 90px;
+    background-color: white;
+    border: 2px solid #f1f2f3;
+    border-radius: 6px;
+    font-size: 12px;
+}
